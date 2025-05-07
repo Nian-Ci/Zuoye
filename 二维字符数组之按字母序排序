@@ -1,0 +1,31 @@
+import java.util.Arrays;
+public class Transpose {
+    public static void main(String[] args) {
+        // 定义二维数组并初始化
+        char[][] a = {{'d','v','g','r'},{'h','s','r','a'},{'q','e','t','z'},{'o','p','d','s'}};
+        // 请在Begin-End间编写代码        
+        /********** Begin **********/
+        char[] temp = new char[16];
+        int index=0;
+        // 第一步：排序，从二维数组的第一个元素开始，依次取每个元素与该元素之后的每个元素比较大
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                temp[index]=a[i][j];
+                index++;
+            }
+        }
+        Arrays.sort(temp);
+		// 第二步：输出排序后的数组
+        for(int i=15;i>=0;i--){
+            if(i%4==0){
+                System.out.println(temp[i]+" ");
+            }
+            else{
+                System.out.print(temp[i]+" ");
+            }
+        }
+        /********** End **********/
+
+        }
+
+}
